@@ -3,7 +3,7 @@ import { RootState, useAppDispatch } from "../../redux/store";
 import { useEffect } from "react";
 import { getPokemonList } from "../../redux/actions";
 import { useSelector } from "react-redux";
-import { PokeCard } from "../ui";
+import { PokeCard, SearchBar } from "../ui";
 
 export function Home() {
   const dispatch = useAppDispatch();
@@ -21,10 +21,11 @@ export function Home() {
 
   return (
     <Container maxWidth="xl">
-      <Box marginTop={4}>
+      <SearchBar />
+      <Box marginTop={4} marginBottom={4}>
         <Grid container spacing={4} justifyContent="center">
           {pokemonList.map((item) => (
-            <Grid item xs={4} key={item.name}>
+            <Grid item xs={4} md={6} lg={3} key={item.name}>
               <PokeCard pokemon={item} />
             </Grid>
           ))}
