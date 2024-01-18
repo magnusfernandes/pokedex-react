@@ -64,7 +64,7 @@ export function SearchBar() {
                   fullWidth
                   onChange={onChange}
                   size="small"
-                  placeholder="Search your favorite pokemon"
+                  placeholder="Search your favorite Pokémon"
                   InputProps={{
                     startAdornment: (
                       <SearchIcon

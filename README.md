@@ -62,7 +62,7 @@ The Pokédex records every Pokémon a Trainer has seen or caught during an adven
 
 ## Getting Started
 
-To get it up and running locally follow these simple steps.
+To get it up and running locally, follow these simple steps.
 
 ### Prerequisites
 
@@ -112,3 +112,7 @@ Project Link: [https://github.com/magnusfernandes/pokedex-react](https://github.
 - [React Router](https://reactrouter.com/web/guides/quick-start) : Used for routing of pages
 - [Font Awesome](https://fontawesome.com/): Icon library
 - [Pokéapi](https://pokeapi.co/): Pokémon API
+
+<br />
+
+Thank you for using Pokedex React! Happy exploring!

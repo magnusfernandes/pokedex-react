@@ -22,7 +22,7 @@ function Footer() {
         >
           <CopyrightIcon icon={faCopyright} />
           <Typography textAlign="center" variant="subtitle2">
-            {currentDate.getFullYear()} Pokedex
+            {currentDate.getFullYear()} Pokédex
           </Typography>
         </Box>
       </Container>

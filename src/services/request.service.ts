@@ -1,7 +1,6 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
-const env = await import.meta.env;
-
 import { RequestMethod } from "../models";
+const env = await import.meta.env;
 
 const getAxiosRequest = (): AxiosInstance => {
   return axios.create({
@@ -9,6 +8,15 @@ const getAxiosRequest = (): AxiosInstance => {
   });
 };
 
+/**
+ * Makes an asynchronous HTTP request using Axios.
+ *
+ * @param {string} URL - The URL to which the request is made.
+ * @param {RequestMethod} method - The HTTP request method (GET, POST, etc.).
+ * @param {unknown} [data] - The data to be sent with the request (optional).
+ * @returns {Promise<unknown>} - A promise that resolves to the response data.
+ * @throws {string} - Throws an error message if the request fails.
+ */
 export const makeRequest = async (
   URL: string,
   method: RequestMethod,
