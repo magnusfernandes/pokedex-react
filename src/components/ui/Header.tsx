@@ -60,7 +60,7 @@ const StyledInputBase = styled(InputBase)(() => ({
 
 function Header() {
   return (
-    <AppBar>
+    <AppBar position="relative">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Logo />

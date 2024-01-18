@@ -1,10 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 
-import { appReducer } from "./slices";
+import { appReducer, pokemonReducer } from "./slices";
 
 const rootReducer = combineReducers({
   app: appReducer,
+  pokemon: pokemonReducer,
 });
 
 export const store = configureStore({
