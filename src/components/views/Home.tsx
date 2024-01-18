@@ -1,8 +1,9 @@
-import { Container, Grid } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import { RootState, useAppDispatch } from "../../redux/store";
 import { useEffect } from "react";
 import { getPokemonList } from "../../redux/actions";
 import { useSelector } from "react-redux";
+import { PokeCard } from "../ui";
 
 export function Home() {
   const dispatch = useAppDispatch();
@@ -24,9 +25,15 @@ export function Home() {
 
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={2}>
-        <Grid item xs={8}></Grid>
-      </Grid>
+      <Box marginTop={4}>
+        <Grid container spacing={2}>
+          {pokemonList.map((item) => (
+            <Grid item xs={4} key={item.name}>
+              <PokeCard pokemon={item} />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Container>
   );
 }

@@ -30,7 +30,7 @@ export const pokemonSlice = createSlice({
           state.totalCount = count;
           state.nextPage = next;
           state.previousPage = previous;
-          state.pokemonList = results;
+          state.pokemonList = results.map((item) => new PokemonListItem(item));
         }
       }
     );
