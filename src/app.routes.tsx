@@ -12,7 +12,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { resetSnackbar } from "./redux/slices";
 import { RootState, useAppDispatch } from "./redux/store";
-import { Home } from "./components/views/Home";
+import { Home, PokemonInfo } from "./components/views";
 
 export function AppRoutes() {
   const dispatch = useAppDispatch();
@@ -32,11 +32,12 @@ export function AppRoutes() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      {loading && <LinearProgress className="tw-z-10 tw-absolute tw-w-full" />}
-      <Box className="tw-z-0" sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", height: "100%" }}>
+      {loading && <LinearProgress />}
+      <Box sx={{ width: "100%", height: "100%" }}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/pokemon/:pokemonId" element={<PokemonInfo />} />
         </Routes>
       </Box>
 
@@ -51,9 +52,7 @@ export function AppRoutes() {
           severity={snackbarData.type}
           sx={{ width: "100%" }}
         >
-          <Typography variant="subtitle2" className="tw-font-medium">
-            {snackbarData.message}
-          </Typography>
+          <Typography variant="subtitle2">{snackbarData.message}</Typography>
         </Alert>
       </Snackbar>
     </Box>

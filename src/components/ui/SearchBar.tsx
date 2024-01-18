@@ -30,7 +30,7 @@ export function SearchBar() {
   const { control, watch } = useForm({
     mode: "all",
     defaultValues: {
-      search: "",
+      search: searchParams.get("query") ? searchParams.get("query") : "",
     },
     resolver: yupResolver(filterSchema),
   });

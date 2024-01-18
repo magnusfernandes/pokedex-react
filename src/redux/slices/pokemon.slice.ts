@@ -22,6 +22,10 @@ export const pokemonSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     // get pokemon list
+    builder.addCase(getPokemonList.pending, (state) => {
+      state.pokemonList = [];
+    });
+
     builder.addCase(
       getPokemonList.fulfilled,
       (state, action: PayloadAction<PokemonListResponse>) => {

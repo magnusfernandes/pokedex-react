@@ -1,13 +1,17 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { makeRequest } from "../../services";
-import { RequestMethod } from "../../models";
+import { PokemonListRequest, RequestMethod } from "../../models";
 
 export const getPokemonList = createAsyncThunk(
   "getPokemonList",
-  async (_, { rejectWithValue }) => {
+  async (payload: PokemonListRequest, { rejectWithValue }) => {
     try {
-      const response = await makeRequest("/pokemon", RequestMethod.GET);
+      const response = await makeRequest(
+        "/pokemon",
+        RequestMethod.GET,
+        payload
+      );
       return response;
     } catch (error) {
       return rejectWithValue(error);

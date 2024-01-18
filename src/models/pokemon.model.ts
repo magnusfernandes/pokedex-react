@@ -14,6 +14,15 @@ export class PokemonListResponse {
   }
 }
 
+export class PokemonListRequest {
+  public offset: number;
+  public limit: number;
+  constructor(data: any) {
+    this.offset = data.offset ? data.offset : 0;
+    this.limit = data.limit ? data.limit : 10;
+  }
+}
+
 export class PokemonListItem {
   public name: string;
   public url: string;
@@ -28,6 +37,8 @@ export class PokemonDetailsResponse {
   public id: number;
   public name: string;
   public types: PokemonTypeItem[];
+  public height: number;
+  public weight: number;
 
   constructor(data: any) {
     this.sprites = data.sprites
@@ -35,6 +46,8 @@ export class PokemonDetailsResponse {
       : new PokemonSprites({});
     this.id = data.id != null ? data.id : null;
     this.name = data.name ? data.name : null;
+    this.height = data.height != null ? data.height : 0;
+    this.weight = data.weight != null ? data.weight : 0;
     this.types = data.types
       ? data.types.map((item: any) => new PokemonTypeItem(item))
       : [];

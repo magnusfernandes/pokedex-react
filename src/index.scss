@@ -1,24 +1,24 @@
 @font-face {
   font-family: 'ProductSans';
-  src: local('ProductSans'), url(./assets/fonts/ProductSans-Regular.ttf) format('TrueType');
+  src: local('ProductSans'), url(/assets/fonts/ProductSans-Regular.ttf) format('TrueType');
 }
 
 @font-face {
   font-family: 'ProductSans';
   font-style: italic;
-  src: local('ProductSans'), url(./assets/fonts/ProductSans-Italic.ttf) format('TrueType');
+  src: local('ProductSans'), url(/assets/fonts/ProductSans-Italic.ttf) format('TrueType');
 }
 
 @font-face {
   font-family: 'ProductSans';
   font-weight: 500;
-  src: local('ProductSans'), url(./assets/fonts/ProductSans-Medium.ttf) format('TrueType');
+  src: local('ProductSans'), url(/assets/fonts/ProductSans-Medium.ttf) format('TrueType');
 }
 
 @font-face {
   font-family: 'ProductSans';
   font-weight: bold;
-  src: local('ProductSans'), url(./assets/fonts/ProductSans-Bold.ttf) format('TrueType');
+  src: local('ProductSans'), url(/assets/fonts/ProductSans-Bold.ttf) format('TrueType');
 }
 
 * {
