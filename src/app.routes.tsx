@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { SyntheticEvent } from "react";
 import { useSelector } from "react-redux";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import { resetSnackbar } from "./redux/slices";
 import { RootState, useAppDispatch } from "./redux/store";
@@ -36,8 +36,7 @@ export function AppRoutes() {
       {loading && <LinearProgress className="tw-z-10 tw-absolute tw-w-full" />}
       <Box className="tw-z-0" sx={{ width: "100%" }}>
         <Routes>
-          <Route path="/" element={<Navigate to="home" />} />
-          <Route path="home" element={<Home />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </Box>
 

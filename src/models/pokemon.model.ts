@@ -22,3 +22,48 @@ export class PokemonListItem {
     this.url = data.url ? data.url : null;
   }
 }
+
+export class PokemonDetailsResponse {
+  public sprites: PokemonSprites;
+  public id: number;
+  public name: string;
+  public types: PokemonTypeItem[];
+
+  constructor(data: any) {
+    this.sprites = data.sprites
+      ? new PokemonSprites(data.sprites)
+      : new PokemonSprites({});
+    this.id = data.id != null ? data.id : null;
+    this.name = data.name ? data.name : null;
+    this.types = data.types
+      ? data.types.map((item: any) => new PokemonTypeItem(item))
+      : [];
+  }
+}
+
+export class PokemonSprites {
+  public front_default: string;
+  public front_shiny: string;
+  constructor(data: any) {
+    this.front_default = data.front_default ? data.front_default : null;
+    this.front_shiny = data.front_shiny ? data.front_shiny : null;
+  }
+}
+
+export class PokemonTypeItem {
+  public slot: number;
+  public type: PokemonType;
+  constructor(data: any) {
+    this.slot = data.slot ? data.slot : null;
+    this.type = data.type ? new PokemonType(data.type) : new PokemonType({});
+  }
+}
+
+export class PokemonType {
+  public name: string;
+  public url: string;
+  constructor(data: any) {
+    this.name = data.name ? data.name : null;
+    this.url = data.url ? data.url : null;
+  }
+}

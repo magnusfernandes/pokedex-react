@@ -15,10 +15,6 @@ export function Home() {
     fetchPokemonList();
   }, []);
 
-  useEffect(() => {
-    console.log(pokemonList);
-  }, [pokemonList]);
-
   const fetchPokemonList = () => {
     dispatch(getPokemonList());
   };
@@ -26,7 +22,7 @@ export function Home() {
   return (
     <Container maxWidth="xl">
       <Box marginTop={4}>
-        <Grid container spacing={2}>
+        <Grid container spacing={4} justifyContent="center">
           {pokemonList.map((item) => (
             <Grid item xs={4} key={item.name}>
               <PokeCard pokemon={item} />
