@@ -5,6 +5,7 @@ import {
 } from "@mui/material";
 import "./App.scss";
 import Layout from "./components/wrappers/Layout";
+import { AppRoutes } from "./app.routes";
 
 const theme = createTheme({
   typography: {
@@ -196,7 +197,7 @@ function App() {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Layout>
-          <h1>Hello</h1>
+          <AppRoutes />
         </Layout>
       </ThemeProvider>
     </StyledEngineProvider>
